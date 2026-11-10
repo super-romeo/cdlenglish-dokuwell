@@ -15,231 +15,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="The English a CDL driver needs at a roadside inspection: officer questions, your load, logs and documents. Short daily voice drills.">
 <link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<style>
-/* Variant "Taste Skill — hero A": kind software (voice-drill app), asymmetric split hero,
-   house palette on light grounds (brief 4), Inter for everything. Token names kept from the first palette. */
-:root{
-  --asphalt:#f7f8f9; --asphalt-2:#ffffff; --asphalt-line:#dfe1e5;
-  --paper:#fcfcfc; --paper-2:#f7f8f9; --card:#ffffff;
-  --ink:#05080b; --muted:#5c646f; --line:#dfe1e5;
-  --amber:#006acf; --amber-ink:#006acf; --amber-soft:#d6efff; --deco:#b1ddff; --focus:#0086dd; --on-accent:#ffffff;
-  --on-dark:#05080b; --on-dark-muted:#5c646f;
-  --ok:#1a7f37; --miss:#cf222e; --warn:#9a6700; --ok-soft:#dafbe1; --miss-soft:#ffebe9;
-  --r-s:10px; --r-m:16px; --r-l:24px;
-  --display:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --text:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --ease:cubic-bezier(.2,.7,.2,1);
-}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--text)}
-.wrap{max-width:1200px;padding:0 32px}
-a{color:var(--amber-ink)}
-h1,h2,h3{font-family:var(--display);color:inherit;font-stretch:88%}
-h2{font-size:clamp(32px,4vw,48px);line-height:1.05;font-weight:800;letter-spacing:-.02em;margin:0 0 20px;max-width:16ch;text-wrap:balance}
-h3{font-size:19px;line-height:1.3;font-weight:700;letter-spacing:-.01em;margin:0 0 6px}
-p{margin:0 0 16px}
-:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
-
-/* header */
-header{background:rgba(252,252,252,.94);border-bottom:1px solid var(--asphalt-line);backdrop-filter:blur(10px)}
-header .wrap{min-height:68px}
-.logo{font-family:var(--display);font-size:19px;font-weight:800;letter-spacing:-.01em;font-stretch:85%}
-.logo a{color:var(--on-dark);display:inline-flex;align-items:center;gap:10px;min-height:44px}
-.logo a::before{content:"";width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--amber) 0 50%,var(--amber-soft) 50% 100%);box-shadow:0 0 0 2px var(--asphalt-2) inset}
-nav.top{display:flex;gap:6px}
-nav.top a{color:var(--on-dark-muted);margin:0;font-size:15px;font-weight:500;padding:10px 12px;position:relative;text-decoration:none}
-nav.top a::after{content:"";position:absolute;left:12px;right:12px;bottom:6px;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
-nav.top a:hover{color:var(--on-dark)}
-nav.top a:hover::after{transform:scaleX(1)}
-
-/* buttons: one style, step on hover, press on click */
-a.cta{display:inline-flex;align-items:center;gap:10px;background:var(--amber);color:var(--on-accent);font:700 17px/1 var(--text);padding:18px 28px;border-radius:999px;margin:0;box-shadow:0 1px 0 rgba(0,0,0,.3),0 6px 16px -8px rgba(0,0,0,.45);transition:transform .18s var(--ease),box-shadow .18s var(--ease),background-color .18s}
-a.cta::after{content:"";width:8px;height:8px;border-top:2.5px solid currentColor;border-right:2.5px solid currentColor;transform:rotate(45deg);transition:transform .18s var(--ease)}
-a.cta:hover{opacity:1;background:var(--amber);transform:translateY(-2px);box-shadow:0 2px 0 rgba(0,0,0,.3),0 12px 24px -12px rgba(0,0,0,.5)}
-a.cta:hover::after{transform:translateX(3px) rotate(45deg)}
-a.cta:active{transform:translateY(0) scale(.98)}
-.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin:auto 0 0;padding:10px 0;border:0;background:none;border-radius:0;color:var(--ink);font:700 15px/1 var(--text);text-decoration:none}
-.btn::after{content:"";width:7px;height:7px;border-top:2px solid var(--amber-ink);border-right:2px solid var(--amber-ink);transform:rotate(45deg);transition:transform .18s var(--ease)}
-.btn:hover{background:none;color:var(--amber-ink)}
-.btn:hover::after{transform:translateX(4px) rotate(45deg)}
-
-/* hero: asymmetric split, text span-5, device span-6 start-7 */
-.hero-band{background:var(--asphalt);color:var(--on-dark);position:relative;overflow:hidden;isolation:isolate}
-.hero-band::before{content:"";position:absolute;inset:0;z-index:-1;background:none}
-.hero{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start;padding:64px 0 80px;min-height:min(820px,calc(100svh - 68px))}
-.hero-text{grid-column:1 / span 5;padding-top:12px}
-.hero-visual{grid-column:7 / span 6;position:relative;display:flex;justify-content:center;min-height:620px}
-.hero h1{font-family:var(--display);font-size:clamp(40px,4.6vw,60px);line-height:.98;font-weight:800;letter-spacing:-.025em;font-stretch:80%;margin:0 0 24px;color:var(--on-dark);text-wrap:balance}
-.hero h1 .muted{display:block;color:var(--on-dark-muted);font-weight:600;font-size:.46em;line-height:1.15;letter-spacing:-.01em;margin-top:14px;font-stretch:88%}
-.hero .sub{font-size:18.5px;line-height:1.55;color:var(--on-dark-muted);margin:0 0 30px;max-width:46ch}
-.facts{list-style:none;padding:0;margin:30px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:15px;color:var(--on-dark)}
-.facts li{display:flex;align-items:center;gap:8px}
-.facts li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber)}
-.hero .cta-note{color:var(--on-dark-muted);font-size:14px;margin:18px 0 0}
-
-/* road behind the phone */
-.road{position:absolute;inset:-40px -10% -120px;z-index:-1;opacity:.55;
-  background:linear-gradient(90deg,transparent calc(50% - 2px),var(--deco) calc(50% - 2px) calc(50% + 2px),transparent calc(50% + 2px)) center/100% 64px repeat-y;
-  -webkit-mask:linear-gradient(180deg,transparent,#05080b 25%,#05080b 70%,transparent);mask:linear-gradient(180deg,transparent,#05080b 25%,#05080b 70%,transparent);
-  transform:perspective(600px) rotateX(52deg);transform-origin:50% 100%}
-
-/* phone */
-.phone{width:316px;height:640px;border-radius:48px;background:var(--paper-2);padding:12px;position:relative;
-  box-shadow:0 0 0 1.5px var(--line),0 40px 80px -30px rgba(0,0,0,.25)}
-.phone::before{content:"";position:absolute;top:22px;left:50%;width:92px;height:26px;border-radius:20px;background:var(--line);transform:translateX(-50%);z-index:2}
-.screen{height:100%;border-radius:37px;background:var(--card);box-shadow:0 0 0 1px var(--line);color:var(--ink);overflow:hidden;display:flex;flex-direction:column;padding:58px 16px 18px;gap:12px;font-size:14px;line-height:1.4}
-.app-top{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:13px}
-.app-top small{font-weight:600;color:var(--muted);font-size:12px}
-.meter{height:5px;border-radius:5px;background:var(--paper-2);overflow:hidden}
-.meter i{display:block;height:100%;width:38%;background:var(--amber);border-radius:5px}
-.who{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.bubble{border-radius:18px;padding:12px 14px;max-width:88%}
-.b-officer{background:var(--asphalt);color:var(--on-dark);border:1px solid var(--line);border-bottom-left-radius:6px}
-.b-officer .who{color:var(--amber)}
-.b-officer p{margin:0 0 10px;font-weight:600;font-size:15px}
-.wave{display:flex;align-items:center;gap:3px;height:20px}
-.wave i{width:3px;border-radius:2px;background:var(--on-dark-muted);height:40%}
-.wave i:nth-child(3n){height:85%}.wave i:nth-child(4n+1){height:60%}.wave i:nth-child(5n){height:100%}
-.wave i:nth-child(-n+9){background:var(--amber)}
-.wave b{margin-left:auto;white-space:nowrap;font-size:11px;font-weight:600;color:var(--on-dark-muted)}
-.b-driver{align-self:flex-end;background:var(--card);border:1.5px solid var(--deco);border-bottom-right-radius:6px}
-.b-driver p{margin:0;font-size:15px;font-weight:500}
-.w-ok{color:var(--ok);font-weight:700}
-.w-miss{color:var(--miss);font-weight:700;text-decoration:underline wavy;text-underline-offset:3px}
-.model{border:1px dashed var(--line);border-radius:14px;padding:10px 12px;background:var(--card)}
-.model p{margin:0;font-size:13.5px;color:var(--ink)}
-.mic{margin-top:auto;display:flex;align-items:center;gap:12px}
-.mic-dot{width:56px;height:56px;border-radius:50%;background:var(--amber);display:grid;place-items:center;flex:none;position:relative}
-.mic-dot::before{content:"";width:14px;height:22px;border-radius:8px;background:var(--on-accent)}
-.mic-dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--amber);opacity:.4}
-.mic span{font-size:13px;font-weight:600;color:var(--muted)}
-.mic span b{display:block;color:var(--ink);font-size:14px}
-
-/* float card, lower left of the device */
-.float{position:absolute;left:0;bottom:112px;width:236px;background:var(--card);color:var(--ink);border-radius:var(--r-m);padding:14px 16px;box-shadow:0 24px 50px -20px rgba(0,0,0,.25);border:1px solid var(--line)}
-.float .who{color:var(--amber-ink)}
-.float p{margin:0;font-weight:700;font-size:15px;line-height:1.35}
-.float small{display:block;margin-top:6px;color:var(--muted);font-size:12.5px}
-.sign{position:absolute;right:2%;top:24px;width:84px;height:84px}
-
-/* entrance (once, on load) */
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
-.hero-text>*{animation:rise .7s var(--ease) both}
-.hero-text>:nth-child(2){animation-delay:.06s}.hero-text>:nth-child(3){animation-delay:.12s}
-.hero-text>:nth-child(4){animation-delay:.18s}.hero-text>:nth-child(5){animation-delay:.24s}.hero-text>:nth-child(6){animation-delay:.3s}
-.phone{animation:rise .9s .1s var(--ease) both}
-.b-officer{animation:pop .5s .7s var(--ease) both}
-.b-driver{animation:pop .5s 1.5s var(--ease) both}
-.model{animation:pop .5s 2.2s var(--ease) both}
-.float{animation:pop .6s 2.8s var(--ease) both}
-
-/* sections */
-main>section{padding:112px 0}
-.sec-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-bottom:48px;align-items:end}
-.sec-head h2{grid-column:1 / span 6;margin:0}
-.sec-head p{grid-column:7 / span 6;margin:0;color:var(--muted);font-size:18px;max-width:46ch}
-.tag{display:inline-block;font:700 12px/1 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--amber-ink);margin:0 0 16px}
-
-/* features */
-#what .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-#what .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-l);padding:32px 32px 22px;gap:10px;min-height:250px;transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s}
-#what .card:hover{transform:translateY(-2px);box-shadow:0 18px 40px -24px rgba(0,0,0,.18);border-color:var(--deco)}
-#what .card>b{font-family:var(--display);font-size:24px;line-height:1.15;font-weight:800;font-stretch:88%;letter-spacing:-.015em;margin:0}
-#what .card span{font-size:16.5px;line-height:1.55;color:var(--muted)}
-#what .card br{display:none}
-.ico{width:44px;height:44px;border-radius:12px;background:var(--amber-soft);display:grid;place-items:center;margin-bottom:10px}
-.ico svg{width:24px;height:24px}
-
-/* example: one driver's week */
-#example{background:var(--paper-2)}
-.week{list-style:none;margin:0 0 40px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:d}
-.week li{background:var(--card);border-radius:var(--r-l);padding:28px;border:1px solid var(--line);position:relative}
-.week .day{font-family:var(--display);font-size:56px;line-height:1;font-weight:800;font-stretch:78%;color:var(--amber);display:block;margin-bottom:14px;letter-spacing:-.02em}
-.week .day small{font-size:16px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px;vertical-align:middle}
-.week p{margin:0;font-size:16.5px;color:var(--ink)}
-.week .res{display:inline-block;margin-top:14px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
-.res.good{background:var(--ok-soft);color:var(--ok)}.res.miss{background:var(--miss-soft);color:var(--miss)}.res.own{background:var(--amber-soft);color:var(--ink)}
-.driver-line{font-size:18px;color:var(--muted);margin:0 0 28px}
-.driver-line b{color:var(--ink)}
-
-/* how it works: route of the inspection + text */
-#opis .cols{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
-#opis .aside{grid-column:1 / span 4;position:sticky;top:110px;align-self:start}
-#opis .body{grid-column:6 / span 7}
-#opis .body p{font-size:18px;line-height:1.7;color:var(--ink);margin:0 0 22px;max-width:62ch}
-#opis .body p:first-child{font-size:21px;line-height:1.55;color:var(--ink)}
-.route{list-style:none;margin:28px 0 0;padding:0 0 0 28px;position:relative}
-.route::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:3px;border-radius:3px;background:var(--amber)}
-.route li{position:relative;padding:0 0 18px;font-weight:600;font-size:16px}
-.route li::before{content:"";position:absolute;left:-26px;top:4px;width:15px;height:15px;border-radius:50%;background:var(--paper);border:3px solid var(--amber)}
-.route li small{display:block;font-weight:400;color:var(--muted);font-size:14.5px}
-
-/* questions */
-#faq{background:var(--card);border-top:1px solid var(--line)}
-#faq .cols{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
-#faq h2{grid-column:1 / span 4}
-#faq .qa{grid-column:6 / span 7}
-#faq .qa div{border-top:1px solid var(--line);padding:22px 0 8px}
-#faq .qa div:last-child{border-bottom:1px solid var(--line)}
-#faq h3{font-size:20px;margin:0 0 8px}
-#faq .qa p{color:var(--muted);margin:0 0 14px}
-
-/* start */
-#start{background:var(--asphalt);color:var(--on-dark)}
-#start .cols{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
-#start .lead-col{grid-column:1 / span 6}
-#start .form-col{grid-column:8 / span 5;background:var(--asphalt-2);border:1px solid var(--asphalt-line);border-radius:var(--r-l);padding:32px}
-#start h2{color:var(--on-dark)}
-#start .tag{color:var(--amber)}
-#start .lead-col p{color:var(--on-dark-muted);font-size:18px;max-width:42ch;margin:0}
-#start label{display:block;font-weight:600;font-size:15px;color:var(--on-dark);margin:0 0 22px}
-#start select{display:block;width:100%;min-width:0;margin-top:10px;padding:14px 16px;font-size:16px;border-radius:var(--r-s);border:1px solid var(--line);background:var(--card);color:var(--ink);min-height:52px}
-#start select:focus{outline:3px solid var(--focus);outline-offset:2px}
-#start a.cta{width:100%;justify-content:center}
-#start .cta-note{color:var(--on-dark-muted);font-size:14px;margin:16px 0 0}
-
-/* footer */
-footer{background:var(--paper-2);border-top:1px solid var(--line);padding:36px 0;font-size:14px}
-footer a{color:var(--on-dark);display:inline-block;padding:10px 0}
-footer p{margin:0}
-footer .muted{color:var(--muted);max-width:80ch}
-
-@media (max-width:1024px){
-  .hero{grid-template-columns:1fr;row-gap:56px;min-height:0;padding:64px 0 80px}
-  .hero-text,.hero-visual{grid-column:1 / -1}
-  .hero-text{max-width:640px}
-  .sec-head h2,.sec-head p{grid-column:1 / -1}
-  .sec-head p{margin-top:14px}
-  #opis .aside,#opis .body,#faq h2,#faq .qa,#start .lead-col,#start .form-col{grid-column:1 / -1}
-  #opis .aside{position:static;margin-bottom:36px}
-  #start .form-col{margin-top:32px}
-}
-@media (max-width:760px){
-  .wrap{padding:0 16px}
-  header .wrap{min-height:60px}
-  nav.top{display:none}
-  main>section{padding:72px 0}
-  .hero{padding:44px 0 64px;row-gap:40px}
-  .hero h1{font-size:42px}
-  .hero .sub{font-size:17.5px}
-  a.cta{display:flex;justify-content:center;width:100%;text-align:center;margin:0}
-  #what .grid,.week{grid-template-columns:1fr}
-  #what .card{min-height:0;padding:26px 24px 16px}
-  .hero-visual{min-height:0;padding-bottom:116px}
-  .phone{width:288px;height:584px}
-  .float{left:0;bottom:0;width:220px}
-  .sign{display:none}
-  .week .day{font-size:44px}
-  h2{font-size:34px}
-}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-}
-</style>
 <script src="smoke.js" defer></script>
 <!-- faq-jsonld:start -->
 <script type="application/ld+json">
@@ -303,148 +78,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <nav class="top"><a href="#what" data-ev="click_nav_what">What you get</a><a href="price.html" data-ev="click_nav_price">Price</a><a href="#example" data-ev="click_nav_example">Example</a><a href="#start" data-ev="click_nav_start">Start</a></nav>
 </div></header>
 
-<main>
-<div class="hero-band">
-  <div class="wrap">
-    <div class="hero">
-      <div class="hero-text">
-        <h1>Roadside inspection English for CDL drivers. <span class="muted">Practice the officer's questions before they ask them.</span></h1>
-        <p class="sub">Short daily voice drills: the questions an officer asks, the answers about your trip, load, hours and documents, and the road signs you must explain. On your phone, between loads, at your own level.</p>
-        <a class="cta" href="price.html" data-ev="cta_click">I need this</a>
-        <ul class="facts">
-          <li>Ten minutes a day</li>
-          <li>Answer out loud, no typing</li>
-          <li>Slower voice to start</li>
-        </ul>
-        <p class="cta-note">Service in preparation · No payment is accepted on this page</p>
-      </div>
-
-      <div class="hero-visual" aria-hidden="true">
-        <div class="road"></div>
-        <svg class="sign" viewBox="0 0 84 84" focusable="false">
-          <rect x="10" y="10" width="64" height="64" rx="6" transform="rotate(45 42 42)" fill="#d6efff" stroke="#006acf" stroke-width="3"/>
-          <rect x="14.5" y="14.5" width="55" height="55" rx="4" transform="rotate(45 42 42)" fill="none" stroke="#006acf" stroke-width="2"/>
-          <path d="M24 33h22v14H24zM46 38h8l5 5v4H46z" fill="#006acf"/>
-          <circle cx="30" cy="50" r="3.5" fill="#006acf"/><circle cx="52" cy="50" r="3.5" fill="#006acf"/>
-        </svg>
-        <div class="phone">
-          <div class="screen">
-            <div class="app-top">Trip questions <small>Drill 3 of 8</small></div>
-            <div class="meter"><i></i></div>
-            <div class="bubble b-officer">
-              <span class="who">Officer</span>
-              <p>Where are you coming from, and what are you hauling?</p>
-              <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b>Normal speed</b></div>
-            </div>
-            <div class="bubble b-driver">
-              <span class="who">You said</span>
-              <p><span class="w-ok">Coming from Columbus, Ohio.</span> <span class="w-miss">Hauling</span> <span class="w-ok">dry van, paper.</span></p>
-            </div>
-            <div class="model">
-              <span class="who">Model answer</span>
-              <p>I'm coming from Columbus, Ohio. I'm hauling paper products in a dry van.</p>
-            </div>
-            <div class="mic"><div class="mic-dot"></div><span><b>Say it again</b>Tap and answer out loud</span></div>
-          </div>
-        </div>
-        <div class="float">
-          <span class="who">Review list · tomorrow</span>
-          <p>“When did you start your shift?”</p>
-          <small>Missed today, first in the next drill</small>
-        </div>
-      </div>
-    </div>
+<div class="wrap">
+  <div class="hero">
+    <h1>English for the roadside inspection — practice the officer's questions before they ask them</h1>
+    <p class="sub">Short daily voice drills for CDL drivers: the questions an officer asks at an inspection, the answers about your trip, load, hours and documents, and the road signs you must explain — on your phone, between loads, at your own level.</p>
+    <a class="cta" href="price.html" data-ev="cta_click">I need this</a>
+    <p class="cta-note">Service in preparation · No payment is accepted on this page</p>
   </div>
-</div>
 
-<section id="what" data-view="features_view">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>What you get in every drill</h2>
-      <p>Each lesson is one small piece of a real inspection, in the order the officer asks.</p>
-    </div>
+  <section id="what" data-view="features_view">
+    <h2>What you get</h2>
     <div class="grid">
-      <div class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#006acf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div><b>Officer questions</b><span>The typical questions at a roadside inspection, spoken at real speed — you answer out loud and hear a clear model answer.</span><br><a class="btn" href="price.html" data-ev="feature_questions">I need this</a></div>
-      <div class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#006acf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="13" height="18" rx="2"/><path d="M8 8h5M8 12h5M8 16h3"/><path d="M20 7v12"/></svg></div><b>Your documents in English</b><span>How to say what you carry: license, medical card, registration, bill of lading, logbook — and where each one is.</span><br><a class="btn" href="price.html" data-ev="feature_documents">I need this</a></div>
-      <div class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#006acf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l10 10-10 10L2 12z"/><path d="M12 7v6M12 16.5v.5"/></svg></div><b>Road signs and instructions</b><span>Signs and short instructions you must understand and explain, with the words you need to describe them.</span><br><a class="btn" href="price.html" data-ev="feature_signs">I need this</a></div>
-      <div class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#006acf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div><b>Daily ten minutes</b><span>A short drill every day and a list of phrases you still miss, so the next lesson starts there.</span><br><a class="btn" href="price.html" data-ev="feature_progress">I need this</a></div>
+      <div class="card"><b>Officer questions</b><span>The typical questions at a roadside inspection, spoken at real speed — you answer out loud and hear a clear model answer.</span><br><a class="btn" href="price.html" data-ev="feature_questions">I need this</a></div>
+      <div class="card"><b>Your documents in English</b><span>How to say what you carry: license, medical card, registration, bill of lading, logbook — and where each one is.</span><br><a class="btn" href="price.html" data-ev="feature_documents">I need this</a></div>
+      <div class="card"><b>Road signs and instructions</b><span>Signs and short instructions you must understand and explain, with the words you need to describe them.</span><br><a class="btn" href="price.html" data-ev="feature_signs">I need this</a></div>
+      <div class="card"><b>Daily ten minutes</b><span>A short drill every day and a list of phrases you still miss, so the next lesson starts there.</span><br><a class="btn" href="price.html" data-ev="feature_progress">I need this</a></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="example" data-view="example_view">
-  <div class="wrap">
-    <h2>Example: one driver's first week</h2>
-    <p class="driver-line"><b>Fictional data.</b> Driver from Ohio, hauling dry van.</p>
-    <ol class="week">
-      <li><span class="day"><small>Day</small>1</span><p>Answers “Where are you coming from?” and “What are you hauling?”</p><span class="res good">Good</span></li>
-      <li><span class="day"><small>Day</small>2</span><p>Misses “When did you start your shift?”</p><span class="res miss">Goes to the review list</span></li>
-      <li><span class="day"><small>Day</small>5</span><p>Explains a weigh-station sign in his own words.</p><span class="res own">In his own words</span></li>
-    </ol>
+  <section id="example" data-view="example_view">
+    <h2>Example (fictional data)</h2>
+    <p class="fine">Driver from Ohio, hauling dry van. Day 1: answers “Where are you coming from?” and “What are you hauling?” — good. Day 2: misses “When did you start your shift?” — the phrase goes to the review list. Day 5: explains a weigh-station sign in his own words.</p>
     <a class="cta" href="price.html" data-ev="click_cta_after_example">Choose your plan</a>
-  </div>
-</section>
+  </section>
 <!-- seo-tekst:start -->
-<section id="opis">
-  <div class="wrap">
-    <div class="cols">
-      <div class="aside">
-        <h2>How it works</h2>
-        <ol class="route" aria-label="Lesson order">
-          <li>Greeting<small>and the reason for the stop</small></li>
-          <li>The trip<small>origin, destination, company, load</small></li>
-          <li>Documents<small>each paper and where it is</small></li>
-          <li>Hours of service<small>shift start, break, logs</small></li>
-          <li>Road signs<small>describe and repeat</small></li>
-        </ol>
-      </div>
-      <div class="body">
-        <p>At a roadside inspection the conversation with the officer is in English. The officer asks where you are coming from and where you are going, what you are hauling, when you started your shift, and asks you to show your license, medical card and logs. Many experienced drivers know the job perfectly well but freeze when the questions come fast, with an accent they are not used to, at the side of a busy road.</p>
-        <p>Inspection English is a short daily practice built only around this situation. It is not a general English course with grammar tables and travel phrases. Every lesson is a small piece of a real inspection: a question spoken at normal speed, a pause for your answer, and a model answer you can repeat. You speak out loud into the phone; the app compares your answer with the expected one and marks the words that were missing or unclear.</p>
-        <p>The lessons follow the order of an inspection. First the greeting and the reason for the stop. Then questions about the trip: origin, destination, the company you drive for, the load and its weight. Then documents: how to name each paper you carry and where it is in the cab. Then hours of service: when you started, when you took your break, how to read your logs out loud. Finally road signs and short instructions — the words you need to describe a sign or to repeat what the officer told you.</p>
-        <p>Every phrase you miss goes to your review list. The next day the drill starts with those phrases, so ten minutes a day are spent on what you really need, not on what you already know. You can choose a slower voice at the beginning and move to normal speed when you are ready. Lessons work between loads, at a truck stop or during a break; you need only your phone and headphones.</p>
-        <p>The practice is written for drivers whose first language is not English: the instructions are short and clear, and each model answer is simple, polite and true to the situation. We do not promise any result at an inspection — the officer decides — but a driver who has answered the same questions out loud fifty times is calmer when they come for real.</p>
-        <p>You start by choosing your level and the kind of freight you haul. The first lessons check what you already say well, and the plan is built from what is left. After a few weeks the drill becomes a quick daily repetition, and you can always go back to any part of the inspection.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="wrap">
-    <div class="cols">
-      <h2>Questions</h2>
-      <div class="qa">
-        <div><h3>Is this a full English course?</h3>
-        <p>No. It covers only the conversation at a roadside inspection: questions, answers about your trip, documents, hours and road signs.</p></div>
-        <div><h3>Do I need to type?</h3>
-        <p>No. You listen and answer out loud; the app checks your spoken answer and shows the words you missed.</p></div>
-        <div><h3>Can I practice slowly first?</h3>
-        <p>Yes. You can start with a slower voice and switch to normal speed when you are ready.</p></div>
-        <div><h3>Do you guarantee I will pass an inspection?</h3>
-        <p>No. The officer decides. The practice helps you understand the questions and answer them clearly.</p></div>
-        <div><h3>Can I use it already?</h3>
-        <p>Not yet. The service is in preparation, and we are checking whether drivers need it.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
+  <section id="opis">
+    <h2>How it works</h2>
+    <p>At a roadside inspection the conversation with the officer is in English. The officer asks where you are coming from and where you are going, what you are hauling, when you started your shift, and asks you to show your license, medical card and logs. Many experienced drivers know the job perfectly well but freeze when the questions come fast, with an accent they are not used to, at the side of a busy road.</p>
+    <p>Inspection English is a short daily practice built only around this situation. It is not a general English course with grammar tables and travel phrases. Every lesson is a small piece of a real inspection: a question spoken at normal speed, a pause for your answer, and a model answer you can repeat. You speak out loud into the phone; the app compares your answer with the expected one and marks the words that were missing or unclear.</p>
+    <p>The lessons follow the order of an inspection. First the greeting and the reason for the stop. Then questions about the trip: origin, destination, the company you drive for, the load and its weight. Then documents: how to name each paper you carry and where it is in the cab. Then hours of service: when you started, when you took your break, how to read your logs out loud. Finally road signs and short instructions — the words you need to describe a sign or to repeat what the officer told you.</p>
+    <p>Every phrase you miss goes to your review list. The next day the drill starts with those phrases, so ten minutes a day are spent on what you really need, not on what you already know. You can choose a slower voice at the beginning and move to normal speed when you are ready. Lessons work between loads, at a truck stop or during a break; you need only your phone and headphones.</p>
+    <p>The practice is written for drivers whose first language is not English: the instructions are short and clear, and each model answer is simple, polite and true to the situation. We do not promise any result at an inspection — the officer decides — but a driver who has answered the same questions out loud fifty times is calmer when they come for real.</p>
+    <p>You start by choosing your level and the kind of freight you haul. The first lessons check what you already say well, and the plan is built from what is left. After a few weeks the drill becomes a quick daily repetition, and you can always go back to any part of the inspection.</p>
+  </section>
+  <section id="faq">
+    <h2>Questions</h2>
+    <h3>Is this a full English course?</h3>
+    <p>No. It covers only the conversation at a roadside inspection: questions, answers about your trip, documents, hours and road signs.</p>
+    <h3>Do I need to type?</h3>
+    <p>No. You listen and answer out loud; the app checks your spoken answer and shows the words you missed.</p>
+    <h3>Can I practice slowly first?</h3>
+    <p>Yes. You can start with a slower voice and switch to normal speed when you are ready.</p>
+    <h3>Do you guarantee I will pass an inspection?</h3>
+    <p>No. The officer decides. The practice helps you understand the questions and answer them clearly.</p>
+    <h3>Can I use it already?</h3>
+    <p>Not yet. The service is in preparation, and we are checking whether drivers need it.</p>
+  </section>
 <!-- seo-tekst:end -->
-<section id="start" data-view="start_view">
-  <div class="wrap">
-    <div class="cols">
-      <div class="lead-col">
-        <h2>Start your first drill</h2>
-        <p>Tell us how your English feels today, and the first lessons start from there.</p>
-      </div>
-      <div class="form-col">
-        <label>Your English today<select data-ev-focus="form_start"><option value="">— please choose —</option><option>I understand a little</option><option>I can answer simple questions</option><option>I speak, but get nervous</option><option>I speak well, want practice</option></select></label>
-        <a class="cta" href="price.html" data-ev="form_submit_click">Start the first drill</a>
-        <p class="cta-note">Service in preparation · No payment is accepted on this page</p>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
+  <section id="start" data-view="start_view">
+    <h2>Start your first drill</h2>
+    <p><label>Your English today<br><select data-ev-focus="form_start" style="margin-top:6px;padding:8px;font-size:16px"><option value="">— please choose —</option><option>I understand a little</option><option>I can answer simple questions</option><option>I speak, but get nervous</option><option>I speak well, want practice</option></select></label></p>
+    <a class="cta" href="price.html" data-ev="form_submit_click">Start the first drill</a>
+  </section>
+</div>
 
 <footer><div class="wrap">
   <p><a href="privacy.html" data-ev="click_legal_privacy">Privacy</a></p>
